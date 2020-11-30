@@ -3,9 +3,9 @@
     "type": "symfony-bundle",
     "description": "Static site generator for any Symfony 4 project.",
     "require": {
-        "symfony/framework-bundle": "^4.1",
-        "symfony/yaml": "^4.1",
-        "symfony/console": "^4.1"
+        "symfony/framework-bundle": "^4.1|^5.0",
+        "symfony/yaml": "^4.1|^5.0",
+        "symfony/console": "^4.1|^5.0"
     },
     "autoload": {
         "psr-4": { "Fw\\LastBundle\\": "" },
@@ -23,8 +23,8 @@
         }
     ],
     "require-dev": {
-        "symfony/phpunit-bridge": "^4.1",
-        "symfony/twig-bundle": "^4.1",
-        "symfony/asset": "^4.1"
+        "symfony/phpunit-bridge": "^4.1|^5.0",
+        "symfony/twig-bundle": "^4.1|^5.0",
+        "symfony/asset": "^4.1|^5.0"
     }
 }
