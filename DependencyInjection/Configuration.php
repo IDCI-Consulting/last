@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: franzwilding
- * Date: 13.08.18
- * Time: 14:20
- */
 
 namespace Fw\LastBundle\DependencyInjection;
 
@@ -13,25 +7,22 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface
 {
-    /**
-     * {@inheritdoc}
-     */
+    const CONFIGURATION_ROOT = 'fw_last';
+
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('fw_last');
+        $treeBuilder = new TreeBuilder(self::CONFIGURATION_ROOT);
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
-        $rootNode->children()
-            ->scalarNode('dist_folder')->end()
-            ->arrayNode('providers')
-              ->children()
-                ->scalarNode('static')->end()
-              ->end()
-          ->end()
-        ->end();
+        $treeBuilder->getRootNode()
+            ->children()
+                ->scalarNode('dist_folder')->end()
+                ->arrayNode('providers')
+                    ->children()
+                        ->scalarNode('static')->end()
+                    ->end()
+                ->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }
