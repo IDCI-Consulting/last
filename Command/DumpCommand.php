@@ -77,7 +77,7 @@ class DumpCommand extends Command
             $question = new ConfirmationQuestion('<comment>Override? [yes|NO]</comment> ', false);
 
             if (!$this->getHelper('question')->ask($input, $output, $question)) {
-                return;
+                return 0;
             }
         }
 
@@ -87,5 +87,7 @@ class DumpCommand extends Command
 
         $output->writeln('<info>Finished dumping.</info>');
         $output->writeln(['', '']);
+
+        return 0;
     }
 }
